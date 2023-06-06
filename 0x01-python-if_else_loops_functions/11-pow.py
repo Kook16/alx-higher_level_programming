@@ -9,4 +9,6 @@ def pow(a, b):
             result /= a
             if a < 0 and b % 2 == 1:
                 result = -result
+            else:
+                result = 1
     return result
