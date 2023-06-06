@@ -5,6 +5,6 @@ for number in range(0, 100):
     if number < 99:
         if number < 10:
             number = '0' + str(number)
-        print(f'{number},', end=' ')
+        print('{},'.format(number), end=' ')
     else:
-        print(number)
+        print('{}'.format(number))

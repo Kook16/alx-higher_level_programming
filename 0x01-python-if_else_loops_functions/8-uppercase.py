@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def uppercase(str):
     for character in str:
-        if ord(character) >= 97 and ord(character) <= 123:
+        if ord(character) >= 97 and ord(character) <= 122:
             ascii_value = ord(character) - 22
-        elif ord(character) >= 65 and ord(character) <= 91:
+        elif ord(character) >= 65 and ord(character) <= 90:
             ascii_value = ord(character)
         str_len = len(str)
         i = 0

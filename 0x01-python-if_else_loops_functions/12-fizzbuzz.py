@@ -8,5 +8,5 @@ def fizzbuzz():
         elif number % 5 == 0:
             message = "Buzz"
         else:
-            message = chr(number)
+            message = str(number)
         print(f'{message} ')
