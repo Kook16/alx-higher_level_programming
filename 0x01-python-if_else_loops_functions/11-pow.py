@@ -12,6 +12,6 @@ def pow(a, b):
         while i < x:
             result /= a
             i += 1
-    else:
-        result = 1
+            if a < 0 ad b % 2 == 1:
+                result = -result
     return result
