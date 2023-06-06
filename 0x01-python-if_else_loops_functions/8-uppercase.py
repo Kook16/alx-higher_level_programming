@@ -1,14 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
+    converted_str = ""
     for character in str:
         if ord(character) >= 97 and ord(character) <= 122:
             ascii_value = ord(character) - 32
-        elif ord(character) >= 65 and ord(character) <= 90:
-            ascii_value = ord(character)
-        str_len = len(str)
-        i = 0
-        if i < len - 1:
-            print('{}'.format(chr(ascii_value)), end="")
-            i += 1
         else:
-            print('{}'.format(chr(ascii_value)))
+            ascii_value = ord(character)
+        converted_str += chr(ascii_value)
+    print(converted_str)
