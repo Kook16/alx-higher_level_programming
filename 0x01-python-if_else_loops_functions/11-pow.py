@@ -10,7 +10,7 @@ def pow(a, b):
         i = 0
         x = b * -1
         while i < x:
-            result /= x
+            result /= a
             i += 1
     else:
         result = 1
