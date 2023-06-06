@@ -9,4 +9,4 @@ def fizzbuzz():
             message = "Buzz"
         else:
             message = str(number)
-        print(f'{message} ')
+        print(f'{message}', end=' ')
