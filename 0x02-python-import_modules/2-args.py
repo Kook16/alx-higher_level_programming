@@ -6,7 +6,7 @@ argument = sys.argv[1:]
 argument_num = len(argument)
 index = 1
 if argument_num == 1:
-        print("{} argument:".format(argument_num))
+        print("{} arguments:".format(argument_num))
 elif argument_num < 1:
     print("{} arguments.".format(argument_num))
 else:
