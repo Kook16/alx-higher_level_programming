@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
-    '''Learn about ValueError'''
     if value is None:
         return
     try:
