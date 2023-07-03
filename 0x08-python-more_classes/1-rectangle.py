@@ -9,6 +9,9 @@ class Rectangle:
     An empyty class
     '''
     def __init__(self, width=0, height=0):
+        '''
+        initiailization function
+        '''
         self.__width = width
         self.__height = height
 
