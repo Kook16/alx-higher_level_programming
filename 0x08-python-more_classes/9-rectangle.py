@@ -20,7 +20,7 @@ class Rectangle:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        return cls(width=size, height=size)
+        return cls(size, size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -36,8 +36,8 @@ class Rectangle:
         return rect_2
 
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -80,28 +80,28 @@ class Rectangle:
         '''
         returns the area of the rectangle
         '''
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
         '''
         return the perimeter of the rectangle
         '''
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         '''
         returns the rectangle with "#"
         '''
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
         rectangle = ""
-        for i in range(self.height):
-            if i is not self.height - 1:
-                rectangle += str(self.print_symbol) * self.width + '\n'
+        for i in range(self.__height):
+            if i is not self.__height - 1:
+                rectangle += str(self.print_symbol) * self.__width + '\n'
             else:
-                rectangle += str(self.print_symbol) * self.width
+                rectangle += str(self.print_symbol) * self.__width
         return rectangle
 
     def __repr__(self):
