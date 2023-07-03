@@ -111,4 +111,4 @@ class Rectangle:
         '''
         returns a new Rectangle with width==height==size
         '''
-        return cls(size, size)
+        return cls(width=size, height=size)
