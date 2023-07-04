@@ -1,0 +1,12 @@
+This is the doctest for 5-text_indentation.py
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation('''Hello, how are you doing. I am doing fine''')
+Hello, how are you doing.
+<BLANKLINE>
+I am doing fine
+>>> text_indentation(12)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+>>> text_indentation('')
