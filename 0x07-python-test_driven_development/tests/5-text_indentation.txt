@@ -9,4 +9,16 @@ I am doing fine
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
+
+>>> text_indentation('hi?')
+hi?
+<BLANKLINE>
+>>> text_indentation('   hello.')
+hello.
+<BLANKLINE>
+>>> text_indentation(' my name is:     Calvin.    ')
+my name is:
+<BLANKLINE>
+Calvin.
+<BLANKLINE>
 >>> text_indentation('')
