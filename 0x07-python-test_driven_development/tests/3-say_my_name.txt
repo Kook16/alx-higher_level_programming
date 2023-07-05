@@ -3,6 +3,7 @@ This is doctest for 3-say_my_name.py
 >>> say_my_name = __import__("3-say_my_name").say_my_name
 >>> say_my_name("Kook", "Ayen")
 My name is Kook Ayen
+
 >>> say_my_name("Kook")
 My name is Kook 
 >>> say_my_name(13, "Kook")
@@ -13,3 +14,9 @@ TypeError: first_name must be a string
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
+
+>>> say_my_name("")
+My name is  
+
+>>> say_my_name("", "")
+My name is  
