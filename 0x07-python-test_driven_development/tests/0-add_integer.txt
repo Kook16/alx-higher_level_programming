@@ -2,7 +2,7 @@ This is a docstring for the doctest
 
 >>> add_integer = __import__("0-add_integer").add_integer
 >>> add_integer(10, 5)
-5
+15
 >>> add_integer(1, 2.5)
 3
 >>> add_integer(2.5, 2.5)
@@ -11,6 +11,8 @@ This is a docstring for the doctest
 -4
 >>> add_integer(1, 0)
 1
+>>> add_integer(0)
+98
 >>> add_integer(3, 'x')
 Traceback (most recent call last):
 ...
@@ -19,6 +21,21 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+>>> add_integer(NaN, b)
+Traceback (most recent call last):
+...
+NameError: name 'NaN' is not defined
+
+>>> add_integer ([1,2], 5)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
 >>> add_integer('x', 7)
 Traceback (most recent call last):
 ...
