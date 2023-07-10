@@ -15,6 +15,9 @@ Doctest for file 7-base_geometry.py
 
 >>> triangle.integer_validator(12, 10)
 
+>>> BaseGeometry.integer_validator('square', 'size', 15)
+
+
 ************************************************************************
     			***** EXCEPTIONS ******
 
@@ -47,6 +50,16 @@ Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 >>> triangle.integer_validator('Distance')
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> rectangle = BaseGeometry([])
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry() takes no arguments
+
+>>> BaseGeometry.integer_validator('size', 15)
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
