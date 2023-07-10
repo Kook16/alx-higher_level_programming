@@ -66,6 +66,10 @@ Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+>>> triangle.integer_validator('int_num',False)
+Traceback (most recent call last):
+...
+TypeError: int_num must be an integer
 
 >>> square.area()
 Traceback (most recent call last):
