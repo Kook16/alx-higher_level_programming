@@ -1,0 +1,52 @@
+Doctest for file 7-base_geometry.py
+
+
+			import the file
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+>>> triangle = BaseGeometry()
+
+
+>>> triangle.integer_validator('length', 12)
+
+
+>>> triangle.integer_validator("", 10)
+
+>>> triangle.integer_validator(12, 10)
+
+************************************************************************
+    			***** EXCEPTIONS ******
+
+>>> triangle.integer_validator('age', 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+
+>>> triangle.integer_validator('name', 'John')
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+
+>>> triangle.integer_validator('distance', -10)
+Traceback (most recent call last):
+...
+ValueError: distance must be greater than 0
+
+
+>>> triangle.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> triangle.integer_validator(None)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> triangle.integer_validator('Distance')
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
