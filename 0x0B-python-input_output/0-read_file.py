@@ -9,5 +9,5 @@ def read_file(filename=""):
         filename: Name of the file to read from, by default its an empty string
     '''
     with open(filename, encoding='UTF8') as file:
-        for line in file:
-            print(line.strip())
+        file_read = file.read()
+        print(file_read)
