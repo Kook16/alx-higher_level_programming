@@ -9,9 +9,6 @@ def read_file(filename=""):
         filename: Name of the file to read from, by default its an empty string
     '''
     try:
-        with open(filename, encoding='UTF8') as file:
+        with open(filename, encoding='utf-8') as file:
             file_read = file.read()
-    except FileNotFoundError:
-        pass
-    else:
-        print(file_read)
+            print(file_read.strip())
