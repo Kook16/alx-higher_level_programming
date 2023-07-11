@@ -8,6 +8,10 @@ def read_file(filename=""):
     Args:
         filename: Name of the file to read from, by default its an empty string
     '''
-    with open(filename, encoding='UTF8') as file:
-        file_read = file.read()
+    try:
+        with open(filename, encoding='UTF8') as file:
+            file_read = file.read()
+    except FileNotFoundError:
+        pass
+    else:
         print(file_read)
