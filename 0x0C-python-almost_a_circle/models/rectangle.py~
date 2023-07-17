@@ -1,0 +1,110 @@
+#!/usr/bin/python3
+'''Defining a Rectangle class'''
+from models.base import Base
+
+
+class Rectangle(Base):
+    '''Rectangle class is a subclass of Base Class'''
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        '''Initializer function that initializes the variables'''
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    @property
+    def width(self):
+        '''gets the value of width'''
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        '''validates the value of width and then sets the value of width'''
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = width
+
+    @property
+    def height(self):
+        '''gets the value of height'''
+        return self.__height
+
+    @height.setter
+    def height(self, height):
+        '''validates the value of height and then sets the value of height'''
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
+        self.__height = height
+
+    @property
+    def x(self):
+        '''gets the value of x'''
+        return self.__x
+
+    @x.setter
+    def x(self, x):
+        '''validates the value of x and then sets the value of x'''
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = x
+
+    @property
+    def y(self):
+        '''gets the value of y'''
+        return self.__y
+
+    @y.setter
+    def y(self, y):
+        '''validates the value of y and then sets the value of y'''
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = y
+
+    def area(self):
+        '''returns the area value of the Rectangle instance'''
+        return self.__width * self.__height
+
+    def to_dictionary(self):
+        '''returns the dictionary representation of a Rectangle'''
+        return {
+            'x': self.__x,
+            'y': self.__y,
+            'id': self.id,
+            'height': self.__height,
+            'width': self.__width
+        }
+
+    def display(self):
+        '''that prints in stdout the Rectangle instance with the character #'''
+        print(f"{'\\n' * (self.__y)}", end='')
+        for unit in range(self.__height):
+            print(f"{' ' * (self.__x)}{'#' * self.__width}")
+
+    def __str__(self):
+        '''Returns an informal representation of an object'''
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
+{self.__width}/{self.__height}"
+
+    def update(self, *args, **kwargs):
+        '''Updated the class by assigning  an argument to each attribute'''
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            attribute_len = len(attributes)
+            args_len = len(args)
+            i = 0
+            while i < args_len and i < attribute_len:
+                setattr(self, attributes[i], args[i])
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
