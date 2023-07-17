@@ -76,7 +76,7 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_x_validation_except_only_int(self):
         '''Test for x type ie only ints required'''
-        with self.assertRaises(TypeError) as ms:
+        with self.assertRaises(TypeError) as msg:
             r7 = Rectangle(1, 1, 'c')
         self.assertEqual(str(msg.exception), "x must be an integer")
 
