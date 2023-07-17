@@ -51,6 +51,21 @@ class Base:
             inst.update(**dictionary)
             return inst
 
+    @classmethod
+    def load_from_file(cls):
+        '''returns a list of instances'''
+        file_name = cls.__name__ + ".json"
+        try:
+            with open(file_name) as f:
+                data = Base.from_json_string(f.read())
+            result = []
+            for item in data:
+                instance = cls.create(**item)
+                result.append(instance)
+            return result
+        except FileNotFoundError:
+            return []
+
     def __init__(self, id=None):
         '''Initializer function'''
         if id is not None:
