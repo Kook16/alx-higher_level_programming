@@ -40,6 +40,17 @@ class Base:
                     list_dict.append(obj_dict)
                 f.write(cls.to_json_string(list_dict))
 
+    @classmethod
+    def create(cls, **dictionary):
+        '''Returns an instance with all attributes already set'''
+        if dictionary is not None:
+            if cls.__name__ == "Rectangle":
+                inst = cls(2, 4)
+            if cls.__name__ == "Square":
+                inst = cls(4)
+            inst.update(**dictionary)
+            return inst
+
     def __init__(self, id=None):
         '''Initializer function'''
         if id is not None:
