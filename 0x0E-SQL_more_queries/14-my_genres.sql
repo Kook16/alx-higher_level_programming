@@ -6,11 +6,11 @@
 -- You can use only one SELECT statement
 -- The database name will be passed as an argument of the mysql command
 SELECT gen.`name`
-  FROM `tv_genres` AS gen
-     INNER JOIN `tv_show_genres` AS show
-     ON gen.`id` = show.`genre_id`
+       FROM `tv_genres` AS gen
+       	    INNER JOIN `tv_show_genres` AS show
+	    ON gen.`id` = show.`genre_id`
 
-     INNER JOIN `tv_shows` AS tv
-     ON tv.`id` = show.`show_id`
-     WHERE tv.`title` = 'Dexter'
-  ORDER BY gen.`name`;
+	    INNER JOIN `tv_shows` AS tv
+	    ON tv.`id` = show.`show_id`
+	    WHERE tv.`title` = 'Dexter'
+       ORDER BY gen.`name`;
