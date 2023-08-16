@@ -8,4 +8,4 @@
 SELECT gen.`name` FROM `tv_genres` AS gen
 INNER JOIN `tv_show_genres` AS show ON gen.`id` = show.`genre_id`
 INNER JOIN `tv_shows` AS tv ON tv.`id` = show.`show_id`
-WHERE tv.`title` = "Dexter" ORDER BY gen.`name`;
+WHERE tv.`title` = 'Dexter' ORDER BY gen.`name`;
