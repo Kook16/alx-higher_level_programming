@@ -1,10 +1,10 @@
 #!/usr/bin/node
 const times = process.argv[2];
 
-if (!isNaN(times) && times > 0) {
+if (!isNaN(times)) {
   let i = 0;
   while (i < times) {
-    console.log('C is fin');
+    console.log('C is fun');
     i++;
   }
 } else {
