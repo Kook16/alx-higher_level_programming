@@ -13,9 +13,9 @@ if (length === 2 || length === 3) { console.log(0); } else {
   }
   const sortedArray = array.sort().reverse();
 
-    if (sortedArray.length >= 2) {
-	console.log(sortedArray[1]);
-    } else {
-	console.log(0);
-    }
+  if (sortedArray.length >= 2) {
+    console.log(sortedArray[1]);
+  } else {
+    console.log(0);
+  }
 }
