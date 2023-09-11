@@ -1,11 +1,9 @@
 #!/usr/bin/node
 const length = process.argv.length;
-let message;
 if (length <= 2) {
-    message = 'No argument';
+    console.log( 'No argument');
 } else if (length == 3) {
-    message = 'Argument found';
+    console.log('Argument found');
 } else {
-    message = 'Arguments found';
+    console.log('Arguments found');
 }
-console.log(message);
