@@ -10,4 +10,3 @@ else
     message = 'No argument';
 
 console.log(message);
-
