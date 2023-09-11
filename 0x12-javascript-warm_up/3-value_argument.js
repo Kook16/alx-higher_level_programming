@@ -4,9 +4,6 @@
 
 let message;
 
-if (process.argv[2])
-    message = process.argv[2];
-else
-    message = 'No argument';
+if (process.argv[2]) { message = process.argv[2]; } else { message = 'No argument'; }
 
 console.log(message);
