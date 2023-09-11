@@ -6,6 +6,6 @@ if (length <= 2) {
 } else if (length == 3) {
     message = 'Argument found';
 } else {
-    message = 'Arguments found'
+    message = 'Arguments found';
 }
 console.log(message);
