@@ -23,8 +23,10 @@ if __name__ == "__main__":
 
     result = cursor.fetchall()
 
-    for row in result:
-        print(row)
+    city_names = [row[0] for row in result]
+    cities_str = ', '.join(city_names)
+
+    print(cities_str)
 
     cursor.close()
     db.close()
