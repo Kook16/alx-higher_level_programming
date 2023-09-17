@@ -17,15 +17,11 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).order_by(State.id)
+    state = session.query(State).filter(State.name == state_name).first()
 
-    flag = 0
-
-    for i in state:
-        if i.name == state_name:
-            print(i.id)
-            flag = 1
-    if not flag:
+    if state:
+        print('{}'.format(state.id))
+    else:
         print("Not found")
 
     session.close()
