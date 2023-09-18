@@ -1,9 +1,0 @@
-#!/usr/bin/node
-
-// script that prints x times “C is fun”
-
-
-const times = process.argv[2];
-
-if (!times)
-    console.log('Missing number of occurrences');
