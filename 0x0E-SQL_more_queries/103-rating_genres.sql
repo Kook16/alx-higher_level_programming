@@ -5,4 +5,4 @@ SELECT tv.title, gen.name
        ON tv.id = show.show_id
        LEFT JOIN tv_genres AS gen
        ON show.genre_id = gen.id
- ORDER BY tv.title, gen.name;
+ ORDER BY tv.title, gen.name DESC;
