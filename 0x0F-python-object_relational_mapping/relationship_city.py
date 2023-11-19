@@ -2,8 +2,8 @@
 ''' python file that contains the class definition of a City and an instance
 Base = declarative_base():'''
 
-from model_state import Base
-from sqlalchemy import String, Column, Integer, MetaData, ForeignKey
+from relationship_state import Base
+from sqlalchemy import String, Column, Integer, ForeignKey
 
 
 class City(Base):
