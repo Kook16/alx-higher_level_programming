@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""
+Script that takes in a URL, send a request to URL, and dispaly body
+"""
 import urllib.request as r
-from urllib.error import URLError
+from urllib.error import HTTPError
 import sys
 
 if __name__ == '__main__':
@@ -11,6 +14,6 @@ if __name__ == '__main__':
         with r.urlopen(req) as response:
             html = response.read()
             print(html.decode('utf-8'))
-    except URLError as e:
+    except HTTPError as e:
         if hasattr(e, 'code'):
             print('Error code: ', e.code)

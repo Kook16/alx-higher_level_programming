@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Script that fetches https://intranet.hbtn.io/status
+"""
+
 import requests
 
 if __name__ == '__main__':
