@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import urllib.request as r
+import sys
+
+if __name__ == '__main__':
+    url = sys.argv[1]
+    req = r.Request(url)
+
+    try:
+        with r.urlopen(req) as response:
+            header_dict = response.getheaders()
+            print(header_dict['X-Request-Id'])
+    except Exception as e:
+        pass
