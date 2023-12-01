@@ -23,5 +23,5 @@ if __name__ == '__main__':
             print('No result')
         else:
             print(f'[{id}] {name}')
-    except NotFoundError:
+    except requests.exceptions.JSONDecodeError:
         print('Not a valid JSON')
