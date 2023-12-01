@@ -15,5 +15,4 @@ if __name__ == '__main__':
             html = response.read()
             print(html.decode('utf-8'))
     except HTTPError as e:
-        if hasattr(e, 'code'):
-            print('Error code: ', e.code)
+        print('Error code: ', e.code)
