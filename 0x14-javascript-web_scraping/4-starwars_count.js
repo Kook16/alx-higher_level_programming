@@ -11,10 +11,10 @@ request(url, (error, response, body) => {
   const data = JSON.parse(body);
   data.results.forEach(film => {
     film.characters.forEach(character => {
-        if (character.includes(`/people/${characterId}/`)) {
-            count++;
-        }
+      if (character.includes(`/people/${characterId}/`)) {
+        count++;
+      }
     });
-  })
+  });
   console.log(count);
 });
