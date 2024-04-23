@@ -4,7 +4,7 @@ const request = require('request');
 const movieId = process.argv[2]; // Get movie ID from command-line argument
 
 if (!movieId) {
-  console.error('Usage: ./100-starwars_characters.js <MOVIE_ID>');
+  console.error('Usage: ./101-starwars_characters.js <MOVIE_ID>');
   process.exit(1);
 }
 
@@ -21,11 +21,11 @@ request(apiUrl, (error, response, body) => {
   }
 
   try {
-    const data = JSON.parse(body);
-    const characters = data.characters;
+    const filmData = JSON.parse(body);
+    const characters = filmData.characters;
 
-    // Function to fetch character names
-    const getCharacterNames = async () => {
+    // Function to fetch and print character names sequentially
+    const printCharacterNames = async () => {
       for (const characterUrl of characters) {
         const characterResponse = await new Promise((resolve, reject) => {
           request(characterUrl, (error, response, body) => {
@@ -40,8 +40,8 @@ request(apiUrl, (error, response, body) => {
       }
     };
 
-    // Call function to fetch character names
-    getCharacterNames();
+    // Call function to print character names
+    printCharacterNames();
   } catch (parseError) {
     console.error('Error parsing response body:', parseError.message);
   }
