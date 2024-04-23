@@ -33,6 +33,10 @@ request(apiUrl, (error, response, body) => {
               reject(error);
               return;
             }
+            if (response.statusCode !== 200) {
+              reject(new Error(`Unexpected status code: ${response.statusCode}`));
+              return;
+            }
             resolve(JSON.parse(body).name);
           });
         });
