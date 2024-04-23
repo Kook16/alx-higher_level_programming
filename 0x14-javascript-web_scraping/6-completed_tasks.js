@@ -1,18 +1,22 @@
 #!/usr/bin/node
-const request = require('request')
-const url = process.argv[2]
-let count = 0;
+const request = require('request');
+const url = process.argv[2];
 request(url, (error, response, body) => {
-    if (error) {
-        console.error(error);
-        return;
+  if (error) {
+    console.error(error);
+    return;
+  }
+  const data = JSON.parse(body);
+  const completedTasksByUser = {};
+
+  data.forEach(task => {
+    if (task.completed) {
+      if (completedTasksByUser[task.userId]) {
+        completedTasksByUser[task.userId]++;
+      } else {
+        completedTasksByUser[task.userId] = 1;
+      }
     }
-    const data = JSON.parse(body)
-    data["results"].forEach(item => {
-        item["characters"].forEach(val => {
-            if (val === 'https://swapi-api.alx-tools.com/api/people/18/')
-                count++;
-        })
-    })
-    console.log(count)
-})
+  });
+  console.log(completedTasksByUser);
+});
